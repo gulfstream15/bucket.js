@@ -11,8 +11,14 @@ router.get('/', function (req, res) {
 router.get('/api/bucket', function (req, res) {
   query.all(function (data) {
     res.json(data);
-  })
+  });
+});
 
-})
+router.post('/api/bucket', function (req, res) {
+  var newCountry = {name: req.body.name};
+  query.add(newCountry, function (data) {
+    res.json(data);
+  });
+});
 
 module.exports = router;

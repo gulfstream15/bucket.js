@@ -7,8 +7,6 @@ var mainRouter = require('./controllers/index.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-
 app.use(express.static('build'));
 app.use(mainRouter);
 
