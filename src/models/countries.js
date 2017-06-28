@@ -9,7 +9,9 @@ Countries.prototype = {
     request.open('GET', url);
     request.addEventListener('load', function () {
       if (request.status !=200) return;
-      onRequestComplete(request.responseText);
+      var jsonString = request.responseText;
+      var resultsData = JSON.parse(jsonString);
+      onRequestComplete(resultsData);
     });
     request.send();
   },

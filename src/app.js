@@ -1,12 +1,7 @@
-var Query = require('./models/countries');
-var query = new Query();
+var UI = require('./views/ui.js');
 
 var app = function () {
-  var url = "http://localhost:3000/api/bucket";
-  var onRequestComplete = function (data) {
-    console.log(data);
-  }
-  query.all(onRequestComplete)
+  new UI();
 }
 
 
